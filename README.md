@@ -13,7 +13,7 @@ My.NetCore exercises
 
 ## Project Overview
 
-This project is an exercise in developing a web API using .NET Core. It demonstrates best practices in building a modern API, including:
+This project is an excercise in developing a web API using .NET Core. It demonstrates best practices in building a modern API, including:
 
 - Creating RESTful endpoints
 - Handling data with Entity Framework Core
