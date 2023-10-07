@@ -10,5 +10,7 @@ namespace Gaming_Store.Data
         {
             
         }
+        public DbSet<Product> Products { get; set; }
+        
     }
 }
