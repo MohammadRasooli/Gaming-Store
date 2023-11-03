@@ -28,5 +28,17 @@ namespace Gaming_Store.Controllers
             var Products = await _product.GetAllProducts();
             return Ok(Products);
         }
+
+        [HttpGet("GetById/{Id}")]
+        public async Task<IActionResult> GetProductById(int Id)
+        {
+            var product = await _product.GetProductById(Id);
+            if (product == null)
+            {
+                return BadRequest("this product not exist!");
+            }
+
+            return Ok(product);
+        }
     }
 }
