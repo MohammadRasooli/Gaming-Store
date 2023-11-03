@@ -12,7 +12,7 @@ namespace Gaming_Store.Repository
     public class ProductRepository : IProductRepository
     {
         private readonly GamingStoreContext _context;
-        
+
         public ProductRepository(GamingStoreContext context)
         {
             _context = context;
@@ -35,7 +35,29 @@ namespace Gaming_Store.Repository
                                     UpdateDate = x.UpdateDate
 
                                 }).ToListAsync();
+
             return products;
+        }
+        public async Task<ProductDetailsDto> GetProductById(int Id)
+        {
+            var product = await _context
+                                .Products
+                                .Where(x => x.ID == Id)
+                                .Select(x => new ProductDetailsDto()
+                                {
+                                    ID = x.ID,
+                                    Name = x.Name,
+                                    Discription = x.Discription,
+                                    Price = x.Price,
+                                    Inventory = x.Inventory,
+                                    Image = x.Image,
+                                    Category = x.Category,
+                                    CreationDate = x.CreationDate,
+                                    UpdateDate = x.UpdateDate
+
+                                }).FirstOrDefaultAsync();
+
+            return product;
         }
     }
 }
