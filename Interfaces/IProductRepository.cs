@@ -8,5 +8,6 @@ namespace Gaming_Store.Interfaces
     public interface IProductRepository
     {
         Task<List<ProductDetailsDto>> GetAllProducts();
+        Task<ProductDetailsDto> GetProductById(int Id);
     }
 }
