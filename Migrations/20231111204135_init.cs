@@ -20,8 +20,8 @@ namespace Gaming_Store.Migrations
                     Inventory = table.Column<int>(nullable: false),
                     Image = table.Column<string>(nullable: true),
                     Category = table.Column<int>(nullable: false),
-                    CreationDate = table.Column<DateTime>(nullable: false),
-                    UpdateDate = table.Column<DateTime>(nullable: false)
+                    CreationDate = table.Column<DateTimeOffset>(nullable: false),
+                    UpdateDate = table.Column<DateTimeOffset>(nullable: false)
                 },
                 constraints: table =>
                 {

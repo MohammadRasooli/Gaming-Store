@@ -10,7 +10,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Gaming_Store.Migrations
 {
     [DbContext(typeof(GamingStoreContext))]
-    [Migration("20231022163403_init")]
+    [Migration("20231111204135_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -31,8 +31,8 @@ namespace Gaming_Store.Migrations
                     b.Property<int>("Category")
                         .HasColumnType("integer");
 
-                    b.Property<DateTime>("CreationDate")
-                        .HasColumnType("timestamp without time zone");
+                    b.Property<DateTimeOffset>("CreationDate")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Discription")
                         .HasColumnType("text");
@@ -49,8 +49,8 @@ namespace Gaming_Store.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("double precision");
 
-                    b.Property<DateTime>("UpdateDate")
-                        .HasColumnType("timestamp without time zone");
+                    b.Property<DateTimeOffset>("UpdateDate")
+                        .HasColumnType("timestamp with time zone");
 
                     b.HasKey("ID");
 
