@@ -69,8 +69,6 @@ namespace Gaming_Store.Repository
                 Inventory = model.Inventory,
                 Image = model.Image,
                 Category = model.Category,
-                CreationDate = model.CreationDate,
-                UpdateDate = model.UpdateDate
             };
 
             _context.Add(product);

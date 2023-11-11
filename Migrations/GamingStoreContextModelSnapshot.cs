@@ -29,8 +29,8 @@ namespace Gaming_Store.Migrations
                     b.Property<int>("Category")
                         .HasColumnType("integer");
 
-                    b.Property<DateTime>("CreationDate")
-                        .HasColumnType("timestamp without time zone");
+                    b.Property<DateTimeOffset>("CreationDate")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Discription")
                         .HasColumnType("text");
@@ -47,8 +47,8 @@ namespace Gaming_Store.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("double precision");
 
-                    b.Property<DateTime>("UpdateDate")
-                        .HasColumnType("timestamp without time zone");
+                    b.Property<DateTimeOffset>("UpdateDate")
+                        .HasColumnType("timestamp with time zone");
 
                     b.HasKey("ID");
 

@@ -16,8 +16,6 @@ namespace Gaming_Store.Models
 
         public int Category { get; set; }
 
-        public DateTime CreationDate { get; set; }
-
-        public DateTime UpdateDate { get; set; }
+        public DateTimeOffset CreationDate { get; set; } = DateTimeOffset.UtcNow;
     }
 }
