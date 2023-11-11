@@ -59,5 +59,24 @@ namespace Gaming_Store.Repository
 
             return product;
         }
+        public async Task<int> CreateProduct(CreateProductDto model)
+        {
+            var product = new Product()
+            {
+                Name = model.Name,
+                Discription = model.Discription,
+                Price = model.Price,
+                Inventory = model.Inventory,
+                Image = model.Image,
+                Category = model.Category,
+                CreationDate = model.CreationDate,
+                UpdateDate = model.UpdateDate
+            };
+
+            _context.Add(product);
+            await _context.SaveChangesAsync();
+
+            return product.ID;
+        }
     }
 }
