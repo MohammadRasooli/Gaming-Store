@@ -9,5 +9,6 @@ namespace Gaming_Store.Interfaces
     {
         Task<List<ProductDetailsDto>> GetAllProducts();
         Task<ProductDetailsDto> GetProductById(int Id);
+        Task<int> CreateProduct(CreateProductDto model);
     }
 }
