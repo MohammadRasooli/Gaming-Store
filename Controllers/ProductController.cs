@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Gaming_Store.Interfaces;
+using Gaming_Store.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -39,6 +40,14 @@ namespace Gaming_Store.Controllers
             }
 
             return Ok(product);
+        }
+
+        [HttpPost("Create")]
+        public async Task<IActionResult> CreateProduct([FromBody] CreateProductDto model)
+        {
+            var productId = await _product.CreateProduct(model);
+
+            return Ok(productId);
         }
     }
 }
