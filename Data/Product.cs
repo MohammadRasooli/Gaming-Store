@@ -18,7 +18,7 @@ namespace Gaming_Store.Data
 
         public int Category { get; set; }
 
-        public DateTimeOffset CreationDate { get; set; }
+        public DateTimeOffset CreationDate { get; set; } = DateTimeOffset.UtcNow;
 
         public DateTimeOffset UpdateDate { get; set; }
 
