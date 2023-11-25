@@ -11,5 +11,6 @@ namespace Gaming_Store.Interfaces
         Task<ProductDetailsDto> GetProductById(int Id);
         Task<int> CreateProduct(CreateProductDto model);
         Task<bool> UpdateProduct(UpdateProductDto model, int Id);
+        Task<bool> RemoveProduct(int Id);
     }
 }
