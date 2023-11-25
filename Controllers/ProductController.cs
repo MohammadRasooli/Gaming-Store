@@ -27,6 +27,7 @@ namespace Gaming_Store.Controllers
         public async Task<IActionResult> GetAllProducts()
         {
             var Products = await _product.GetAllProducts();
+
             return Ok(Products);
         }
 
@@ -49,7 +50,7 @@ namespace Gaming_Store.Controllers
 
             return Ok(productId);
         }
-        
+
         [HttpPut("Update/{Id}")]
         public async Task<IActionResult> UpdateProduct([FromBody] UpdateProductDto model, int Id)
         {
@@ -59,7 +60,21 @@ namespace Gaming_Store.Controllers
             {
                 return BadRequest("this product not exist!");
             }
+
             return Ok(Update);
+        }
+
+        [HttpDelete("Remove/{Id}")]
+        public async Task<IActionResult> RemoveProduct(int Id)
+        {
+            var Remove = await _product.RemoveProduct(Id);
+
+            if (!Remove)
+            {
+                return BadRequest("this product not exist!");
+            }
+
+            return Ok(Remove);
         }
     }
 }
