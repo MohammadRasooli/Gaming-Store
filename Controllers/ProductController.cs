@@ -49,5 +49,17 @@ namespace Gaming_Store.Controllers
 
             return Ok(productId);
         }
+        
+        [HttpPut("Update/{Id}")]
+        public async Task<IActionResult> UpdateProduct([FromBody] UpdateProductDto model, int Id)
+        {
+            var Update = await _product.UpdateProduct(model, Id);
+
+            if (!Update)
+            {
+                return BadRequest("this product not exist!");
+            }
+            return Ok(Update);
+        }
     }
 }
