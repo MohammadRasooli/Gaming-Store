@@ -99,5 +99,22 @@ namespace Gaming_Store.Repository
 
             return false;
         }
+        public async Task<bool> RemoveProduct(int Id)
+        {
+            var product = await _context
+                                .Products
+                                .Where(x => x.ID == Id)
+                                .FirstOrDefaultAsync();
+
+            if (product != null)
+            {
+                _context.Remove(product);
+
+                await _context.SaveChangesAsync();
+                return true;
+            }
+
+            return false;
+        }
     }
 }
