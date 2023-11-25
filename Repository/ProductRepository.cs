@@ -76,5 +76,28 @@ namespace Gaming_Store.Repository
 
             return product.ID;
         }
+        public async Task<bool> UpdateProduct(UpdateProductDto model, int Id)
+        {
+            var product = await _context
+                                .Products
+                                .Where(x => x.ID == Id)
+                                .FirstOrDefaultAsync();
+
+            if (product != null)
+            {
+                product.Name = model.Name;
+                product.Discription = model.Discription;
+                product.Price = model.Price;
+                product.Inventory = model.Inventory;
+                product.Image = model.Image;
+                product.Category = model.Category;
+                product.UpdateDate = model.UpdateDate;
+
+                await _context.SaveChangesAsync();
+                return true;
+            }
+
+            return false;
+        }
     }
 }
